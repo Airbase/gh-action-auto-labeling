@@ -12,37 +12,9 @@ import { IssueEvent } from '../src/types';
 
 function createDummyIssueEvent(actorType: string, event: string): IssueEvent {
   return {
-    id: 0,
-    node_id: 'node_id',
-    url: 'url',
-    actor: {
-      login: 'login',
-      id: 0,
-      node_id: 'node_id',
-      avatar_url: 'avatar_url',
-      gravatar_id: 'gravatar_id',
-      url: 'url',
-      html_url: 'html_url',
-      followers_url: 'followers_url',
-      following_url: 'following_url',
-      gists_url: 'gists_url',
-      starred_url: 'starred_url',
-      subscriptions_url: 'subscriptions_url',
-      organizations_url: 'organizations_url',
-      repos_url: 'repos_url',
-      events_url: 'events_url',
-      received_events_url: 'received_events_url',
-      type: actorType,
-      site_admin: false,
-    },
+    actor: { type: actorType },
     event,
-    commit_id: 'commit_id',
-    commit_url: 'commit_url',
-    created_at: 'created_at',
-    label: {
-      name: 'name',
-      color: 'color',
-    },
+    label: { name: 'name' },
   };
 }
 

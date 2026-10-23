@@ -1,0 +1,10 @@
+minimumReleaseAge: 10080 # 7 days in minutes
+blockExoticSubdeps: true
+trustPolicy: no-downgrade
+strictDepBuilds: true
+
+allowBuilds:
+  unrs-resolver: true
+
+trustPolicyExclude:
+  - semver@6.3.1

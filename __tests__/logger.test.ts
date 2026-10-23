@@ -2,7 +2,7 @@ import { LoggingLevel, Logger } from '../src/logger';
 
 describe(Logger.name, (): void => {
   let logger: Logger;
-  let consoleLogSpy: jest.SpyInstance<void, [any?, ...any[]]>;
+  let consoleLogSpy: jest.SpyInstance<void, unknown[]>;
 
   beforeAll((): void => {
     consoleLogSpy = jest.spyOn(console, 'log').mockImplementation();
