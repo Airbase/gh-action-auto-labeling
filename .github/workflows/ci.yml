@@ -18,8 +18,8 @@ jobs:
         with:
           node-version-file: '.nvmrc'
       - run: pnpm install --frozen-lockfile
-      - run: pnpm lint:js
-      - run: pnpm lint:non-js
+      - run: pnpm lint:ts
+      - run: pnpm lint:config
 
   test:
     runs-on: ubuntu-latest

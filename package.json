@@ -5,10 +5,10 @@
   "description": "A bot to automate issue labeling",
   "scripts": {
     "build": "tsc && ncc build src/main.ts -o dist",
-    "format:js": "eslint --fix src __tests__",
-    "format:non-js": "prettier --write \"./**/*.{md,yml,json}\"",
-    "lint:js": "eslint src __tests__",
-    "lint:non-js": "prettier --check \"./**/*.{md,yml,json}\"",
+    "format:ts": "eslint --fix src __tests__",
+    "format:config": "prettier --write \"./**/*.{md,yml,json}\"",
+    "lint:ts": "eslint src __tests__",
+    "lint:config": "prettier --check \"./**/*.{md,yml,json}\"",
     "test": "jest --verbose --colors",
     "typecheck": "tsc"
   },
