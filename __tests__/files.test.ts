@@ -18,8 +18,11 @@ function* getFiles(dir: string): Generator<string> {
   }
 }
 
-function isYaml(path: string): boolean {
-  return path.endsWith('.yaml');
+// pnpm requires these exact file names
+const pnpmYamlFiles = ['pnpm-lock.yaml', 'pnpm-workspace.yaml'];
+
+function isYaml(file: string): boolean {
+  return file.endsWith('.yaml') && !pnpmYamlFiles.includes(path.basename(file));
 }
 
 describe('files', (): void => {

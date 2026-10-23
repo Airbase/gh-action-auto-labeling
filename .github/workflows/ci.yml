@@ -12,30 +12,31 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6.1.0
+      - uses: actions/setup-node@v5
         with:
-          node-version: '12.x'
-      - run: npm install
-      - run: npm run lint:js
-      - run: npm run lint:non-js
+          node-version-file: '.nvmrc'
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm lint:ts
+      - run: pnpm lint:config
 
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6.1.0
+      - uses: actions/setup-node@v5
         with:
-          node-version: '12.x'
-      - run: npm install
-      - run: npm run test
-      - uses: codecov/codecov-action@v1
-      - run: npm run build
+          node-version-file: '.nvmrc'
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm test
+      - run: pnpm build
       - name: Verify dist/index.js is updated
         run: |
-          git_diff=$(git diff)
-          if [ ! -z "$git_diff" ]; then
-            echo $git_diff
+          if [ -n "$(git status --porcelain dist)" ]; then
+            git status --short dist
+            git diff --stat dist
             exit 1
           fi
 
@@ -46,7 +47,7 @@ jobs:
       matrix:
         offset: ['1H', '1d', '1m']
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v7
       - uses: ./
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}

@@ -16,7 +16,6 @@ export class Logger {
   }
 
   /* eslint-disable @typescript-eslint/no-explicit-any */
-  /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
   debug(message?: any, ...optionalParams: any[]): void {
     if (this.shouldLog(LoggingLevel.DEBUG)) {
       this.log(message, ...optionalParams);
