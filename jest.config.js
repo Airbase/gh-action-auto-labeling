@@ -3,19 +3,7 @@ module.exports = {
   testEnvironment: 'node',
   testMatch: ['**/*.test.ts'],
   transform: {
-    '^.+\\.ts$': [
-      'ts-jest',
-      {
-        tsconfig: {
-          module: 'commonjs',
-          moduleResolution: 'node10',
-          target: 'es2022',
-          strict: true,
-          esModuleInterop: true,
-          types: ['node', 'jest'],
-        },
-      },
-    ],
+    '^.+\\.ts$': ['ts-jest', { tsconfig: 'tsconfig.test.json' }],
   },
   verbose: true,
   collectCoverage: true,
