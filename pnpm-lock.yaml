@@ -30,7 +30,7 @@ importers:
         specifier: 8.58.0
         version: 8.58.0(@typescript/typescript6@6.0.2)(eslint@9.39.2)
       '@vercel/ncc':
-        specifier: ^0.45.0
+        specifier: 0.45.0
         version: 0.45.0
       eslint:
         specifier: 9.39.2
@@ -1907,8 +1907,8 @@ packages:
     resolution: {integrity: sha512-TeTSQ6H5YHvpqVwBRcnLDCBnDOHWYu7IvGbHT6N8AOymcr9PJGjc1GTtiWZTYg0NCgYwvnYWEkVChQAr9bjfwA==}
     engines: {node: '>=16'}
 
-  typescript@6.0.3:
-    resolution: {integrity: sha512-y2TvuxSZPDyQakkFRPZHKFm+KKVqIisdg9/CZwm9ftvKXLP8NRWj38/ODjNbr43SsoXqNuAisEf1GdCxqWcdBw==}
+  typescript@6.0.2:
+    resolution: {integrity: sha512-bGdAIrZ0wiGDo5l8c++HWtbaNCWTS4UTv7RaTH/ThVIgjkveJt83m74bBHMJkuCbslY8ixgLBVZJIOiQlQTjfQ==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -2819,7 +2819,7 @@ snapshots:
 
   '@typescript/typescript6@6.0.2':
     dependencies:
-      '@typescript/old': typescript@6.0.3
+      '@typescript/old': typescript@6.0.2
 
   '@ungap/structured-clone@1.4.0': {}
 
@@ -4123,7 +4123,7 @@ snapshots:
 
   type-fest@4.41.0: {}
 
-  typescript@6.0.3: {}
+  typescript@6.0.2: {}
 
   uglify-js@3.19.3:
     optional: true
