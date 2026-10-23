@@ -5,6 +5,3 @@ strictDepBuilds: true
 
 allowBuilds:
   unrs-resolver: true
-
-trustPolicyExclude:
-  - semver@6.3.1
