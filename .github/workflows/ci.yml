@@ -34,9 +34,9 @@ jobs:
       - run: pnpm build
       - name: Verify dist/index.js is updated
         run: |
-          git_diff=$(git diff)
-          if [ ! -z "$git_diff" ]; then
-            echo $git_diff
+          if [ -n "$(git status --porcelain dist)" ]; then
+            git status --short dist
+            git diff --stat dist
             exit 1
           fi
 
